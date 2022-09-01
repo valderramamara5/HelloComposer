@@ -1,0 +1,18 @@
+{
+    "name": "angelica/hello-package",
+    "description": "prueba hello",
+    "type": "package",
+    "autoload": {
+        "psr-4": {
+            "Angelica\\HelloPackage\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Angelica",
+            "email": "maria.angelica.valderrama@correounivalle.edu.co"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
