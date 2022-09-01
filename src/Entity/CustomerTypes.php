@@ -1,31 +1,19 @@
 <?php
+
 namespace Angelica\HelloPackage\Entity;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\DBAL\Types\Types;
 
-/**
- * CustomersTypes
- *
- * @ORM\Table(name="customer_types")
- * @ORM\Entity
- */
+#[ORM\Entity(repositoryClass: CustomerTypesRepository::class)]
+class CustomerTypes
+{
+    #[ORM\Id]
+    #[ORM\GeneratedValue(strategy:"SEQUENCE")]
+    #[ORM\SecuenceGenerator(sequenceName:"customer_types_id_seq", allocationSize:1, initialValue:1)]
+    #[ORM\Column]
+    private ?int $id = null;
 
-class CustomerTypes{
-   /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="SEQUENCE")
-     * @ORM\SequenceGenerator(sequenceName="customer_types_id_seq", allocationSize=1, initialValue=1)
-     */
-    private $id;
-
-    /**
-     * Get the value of id
-     *
-     * @return  int
-     */ 
-    public function getId()
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -33,11 +21,9 @@ class CustomerTypes{
     /**
      * Set the value of id
      *
-     * @param  int  $id
-     *
      * @return  self
      */ 
-    public function setId(int $id)
+    public function setId($id)
     {
         $this->id = $id;
 
